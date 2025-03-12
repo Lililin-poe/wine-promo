@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOBLE VINE - 臻品佳酿</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-black text-white">
+<!-- 年龄验证弹窗 -->
+<div id="age-verification" class="fixed-overlay">
+    <div class="modal">
+        <div class="modal-icon">
+            <i class="fas fa-wine-glass-alt"></i>
+        </div>
+        <h2>年龄验证</h2>
+        <p>欢迎访问我们的网站。请确认您已达到您所在国家/地区的法定饮酒年龄。</p>
+        <div class="button-group">
+            <button class="btn btn-outline" id="reject-btn">我未满法定年龄</button>
+            <button class="btn btn-primary" id="verify-btn">我已满法定年龄</button>
+        </div>
+        <p class="disclaimer">饮酒过量有害健康，请理性饮酒。</p>
+    </div>
+</div>
+
+<!-- 头部导航 -->
+<header class="sticky-header">
+    <div class="container">
+        <nav>
+            <a href="#" class="logo">NOBLE VINE</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#collection">产品系列</a></li>
+                <li><a href="#story">品牌故事</a></li>
+                <li><a href="#gallery">酒品展示</a></li>
+                <li><a href="#testimonials">顾客评价</a></li>
+                <li><a href="#subscription">会员订阅</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="用户菜单">
+                    <i class="fas fa-user"></i>
+                </button>
+                <button class="icon-btn" aria-label="购物车">
+                    <i class="fas fa-shopping-cart"></i>
+                </button>
+                <button class="btn btn-outline-amber desktop-only">立即购买</button>
+                <button class="menu-toggle" id="menu-toggle" aria-label="菜单">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- 移动端菜单 -->
+<div id="mobile-menu" class="mobile-menu">
+    <div class="container">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">NOBLE VINE</a>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#collection">产品系列</a></li>
+            <li><a href="#story">品牌故事</a></li>
+            <li><a href="#gallery">酒品展示</a></li>
+            <li><a href="#testimonials">顾客评价</a></li>
+            <li><a href="#subscription">会员订阅</a></li>
+        </ul>
+        <button class="btn btn-primary full-width">立即购买</button>
+    </div>
+</div>
+
+<main>
+    <!-- 英雄区域 -->
+    <section class="hero-section" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <span class="text-amber">臻品佳酿</span>
+                <span>匠心独具的艺术</span>
+            </h1>
+            <p class="hero-description">
+                源自百年传承的酿造工艺，每一滴都蕴含着时间的馈赠与自然的恩惠，带您领略非凡的味觉盛宴。
+            </p>
+            <div class="button-group">
+                <button class="btn btn-primary">立即品鉴</button>
+                <button class="btn btn-outline">了解更多</button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>向下滚动探索更多</span>
+            <div class="mouse">
+                <div class="mouse-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品特性 -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">卓越品质</div>
+                <h2 class="section-title">非凡特性，独特体验</h2>
+                <p class="section-description">
+                    每一瓶都是精心挑选的佳酿，带给您无与伦比的味觉享受
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wine-bottle"></i>
+                    </div>
+                    <h3>精选葡萄</h3>
+                    <p>采用世界顶级葡萄园的优质葡萄，确保每一滴酒都蕴含丰富的风味</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>有机种植</h3>
+                    <p>坚持有机种植理念，不使用化学农药，尊重自然，呵护健康</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>传统工艺</h3>
+                    <p>传承百年酿造技艺，结合现代科技，打造完美平衡的口感</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>国际认证</h3>
+                    <p>荣获多项国际大奖，品质获得全球专业评审的一致认可</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌故事 -->
+    <section class="story-section" id="story">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <div class="badge">品牌故事</div>
+                    <h2 class="section-title">百年传承，匠心酿造</h2>
+                    <p>
+                        始于1886年，我们的酒庄坐落于世界著名的葡萄酒产区，拥有得天独厚的自然条件。几代酿酒师的智慧与热情，铸就了今天的卓越品质。
+                    </p>
+                    <p>
+                        我们坚持传统与创新并重，尊重自然规律，精心呵护每一株葡萄藤，只为在每一瓶酒中注入灵魂与情感。
+                    </p>
+                    <p>
+                        从葡萄园到酒窖，从橡木桶到酒瓶，我们对细节的执着追求，成就了这款令人难忘的佳酿。
+                    </p>
+                    <div class="divider">
+                        <span class="text-amber">自1886年</span>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <div class="image-overlay"></div>
+                    <blockquote>
+                        "真正的艺术在于尊重传统，同时不断探索创新，就像我们酿造的每一瓶酒。"
+                        <div class="quote-author">
+                            <div class="quote-line"></div>
+                            <span>首席酿酒师</span>
+                        </div>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品系列 -->
+    <section class="collection-section" id="collection">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">臻品系列</div>
+                <h2 class="section-title">探索我们的精选佳酿</h2>
+                <p class="section-description">
+                    每一款酒都有其独特的个性和故事，邀您共同品鉴
+                </p>
+            </div>
+            <div class="wine-grid" id="wine-collection">
+                <!-- 动态加载产品 -->
+            </div>
+            <div class="text-center mt-8">
+                <a href="#" class="link-with-arrow">
+                    查看全部产品
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品画廊 -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">视觉盛宴</div>
+                <h2 class="section-title">探索我们的酒庄</h2>
+                <p class="section-description">
+                    从葡萄园到酒窖，每一个环节都充满匠心
+                </p>
+            </div>
+            <div class="gallery-slider">
+                <div class="gallery-container" id="gallery-container">
+                    <!-- 动态加载画廊图片 -->
+                </div>
+                <button class="gallery-nav prev" id="gallery-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="gallery-nav next" id="gallery-next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="gallery-dots" id="gallery-dots">
+                    <!-- 动态加载指示点 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 顾客评价 -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">顾客评价</div>
+                <h2 class="section-title">品鉴者的心声</h2>
+                <p class="section-description">
+                    听听我们的顾客如何评价这款非凡的佳酿
+                </p>
+            </div>
+            <div class="testimonials-grid" id="testimonials-container">
+                <!-- 动态加载评价 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 会员订阅 -->
+    <section class="subscription-section" id="subscription">
+        <div class="container">
+            <div class="subscription-grid">
+                <div class="subscription-content">
+                    <div class="badge">会员订阅</div>
+                    <h2 class="section-title">加入我们的葡萄酒俱乐部</h2>
+                    <p>
+                        订阅我们的会员计划，定期收到精心挑选的佳酿，开启一段美妙的葡萄酒之旅。
+                    </p>
+                    <form class="subscription-form">
+                        <div class="form-group">
+                            <label for="email">电子邮箱</label>
+                            <input type="email" id="email" placeholder="您的邮箱地址" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">姓名</label>
+                            <input type="text" id="name" placeholder="您的姓名" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width">立即订阅</button>
+                        <p class="form-disclaimer">订阅即表示您同意我们的服务条款和隐私政策</p>
+                    </form>
+                </div>
+                <div class="subscription-plans">
+                    <div class="plan-card">
+                        <h3>品鉴会员</h3>
+                        <div class="plan-price">
+                            <span class="price">¥288</span>
+                            <span class="period">每月</span>
+                        </div>
+                        <p>每月精选一款优质葡萄酒，带您领略不同产区的风土特色</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 每月1瓶精选葡萄酒</li>
+                            <li><i class="fas fa-check"></i> 专业品鉴指南</li>
+                            <li><i class="fas fa-check"></i> 会员专享价格</li>
+                            <li><i class="fas fa-check"></i> 免费参加月度品鉴活动</li>
+                        </ul>
+                        <button class="btn btn-secondary full-width">选择此计划</button>
+                    </div>
+                    <div class="plan-card popular">
+                        <div class="popular-badge">最受欢迎</div>
+                        <h3>臻享会员</h3>
+                        <div class="plan-price">
+                            <span class="price">¥588</span>
+                            <span class="period">每月</span>
+                        </div>
+                        <p>为资深爱好者打造的高端订阅计划，尽享稀有佳酿</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 每月2瓶珍稀葡萄酒</li>
+                            <li><i class="fas fa-check"></i> 专业品鉴指南与搭配建议</li>
+                            <li><i class="fas fa-check"></i> 会员专享价格</li>
+                            <li><i class="fas fa-check"></i> 免费参加所有品鉴活动</li>
+                            <li><i class="fas fa-check"></i> 专属酒窖顾问服务</li>
+                            <li><i class="fas fa-check"></i> 限量版酒款优先购买权</li>
+                        </ul>
+                        <button class="btn btn-primary full-width">选择此计划</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="logo">NOBLE VINE</a>
+                <p>匠心酿造，传承百年。每一瓶都是时间与自然的艺术品。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="#collection">产品系列</a></li>
+                    <li><a href="#story">品牌故事</a></li>
+                    <li><a href="#gallery">酒庄展示</a></li>
+                    <li><a href="#testimonials">顾客评价</a></li>
+                    <li><a href="#subscription">会员订阅</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p>地址：中国北京市朝阳区酒仙桥路10号</p>
+                <p>电话：+86 10 8888 8888</p>
+                <p>邮箱：info@noblevine.com</p>
+                <p>营业时间：周一至周日 10:00-22:00</p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>订阅通讯</h3>
+                <p>订阅我们的电子通讯，获取最新产品信息和独家优惠。</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="您的邮箱地址">
+                    <button class="btn btn-primary">订阅</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 NOBLE VINE. 保留所有权利。</p>
+            <p>
+                <a href="#">隐私政策</a> ·
+                <a href="#">服务条款</a> ·
+                <a href="#">Cookie 政策</a>
+            </p>
+            <p>饮酒过量有害健康，请理性饮酒。未成年人请勿饮酒。</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -23,6 +23,29 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'https://www.google.com';
     });
 
+    // 公众号二维码弹窗
+    const qrcodeModal = document.getElementById('qrcode-modal');
+    const closeQrcode = document.getElementById('close-qrcode');
+    const contactBtns = document.querySelectorAll('#contact-btn, .mobile-contact-btn, #hero-contact-btn, #collection-contact-btn, #footer-contact-btn');
+
+    contactBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            qrcodeModal.style.display = 'flex';
+            qrcodeModal.style.opacity = '0';
+            setTimeout(() => {
+                qrcodeModal.style.opacity = '1';
+            }, 10);
+        });
+    });
+
+    closeQrcode.addEventListener('click', function() {
+        qrcodeModal.style.opacity = '0';
+        setTimeout(() => {
+            qrcodeModal.style.display = 'none';
+        }, 500);
+    });
+
     // 移动端菜单
     const menuToggle = document.getElementById('menu-toggle');
     const closeMenu = document.getElementById('close-menu');
@@ -179,7 +202,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p class="wine-description">${wine.description}</p>
                 <div class="wine-footer">
                     <span class="wine-price">${wine.price}</span>
-                    <button class="btn btn-outline-amber">加入购物车</button>
                 </div>
             </div>
         `;
@@ -270,18 +292,11 @@ document.addEventListener('DOMContentLoaded', function() {
         testimonialsContainer.appendChild(testimonialCard);
     });
 
-    // 表单提交
-    const subscriptionForm = document.querySelector('.subscription-form');
-
-    subscriptionForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('感谢您的订阅！我们将尽快与您联系。');
-        subscriptionForm.reset();
-    });
-
     // 平滑滚动
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
+            if (this.getAttribute('href') === '#') return;
+
             e.preventDefault();
 
             const target = document.querySelector(this.getAttribute('href'));
@@ -296,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 动画效果
     const animateOnScroll = function() {
-        const elements = document.querySelectorAll('.feature-card, .wine-card, .testimonial-card, .plan-card');
+        const elements = document.querySelectorAll('.feature-card, .wine-card, .testimonial-card, .contact-item');
 
         elements.forEach(element => {
             const elementPosition = element.getBoundingClientRect().top;
@@ -310,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // 初始化动画
-    elements = document.querySelectorAll('.feature-card, .wine-card, .testimonial-card, .plan-card');
+    elements = document.querySelectorAll('.feature-card, .wine-card, .testimonial-card, .contact-item');
     elements.forEach(element => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(20px)';

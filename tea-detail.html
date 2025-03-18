@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>茶品系列详情 - 沉香臻品</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./image/logo.png" type="image/x-icon">
+</head>
+<body class="bg-black">
+<!-- 头部导航 -->
+<header class="sticky-header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">沉香臻品</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="wine-detail.html">名酒系列</a></li>
+                <li><a href="incense-detail.html">沉香系列</a></li>
+                <li><a href="tea-detail.html">茶品系列</a></li>
+                <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+                <li><a href="index.html#bracelet">手串系列</a></li>-->
+                <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                <li><a href="#" id="contact-btn">联系我们</a></li>
+                <li><a href="about-us.html">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menu-toggle" aria-label="菜单">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- 移动端菜单 -->
+<div id="mobile-menu" class="mobile-menu">
+    <div class="container">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">沉香臻品</a>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="wine-detail.html">名酒系列</a></li>
+            <li><a href="incense-detail.html">沉香系列</a></li>
+            <li><a href="tea-detail.html">茶品系列</a></li>
+            <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+            <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+            <li><a href="index.html#bracelet">手串系列</a></li>-->
+            <!-- 联系我们保持显示二维码弹窗逻辑 -->
+            <li><a href="#" class="mobile-contact-btn">联系我们</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 公众号弹窗 -->
+<div id="qrcode-modal" class="fixed-overlay" style="display: none;">
+    <div class="modal">
+        <button class="close-modal" id="close-qrcode">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>关注我们的公众号</h2>
+        <div class="qrcode-container">
+            <img src="./image/商城小程序图.jpg" alt="公众号二维码" id="qrcode-image">
+        </div>
+        <p>扫描上方二维码，关注我们的公众号，了解更多产品信息和活动。</p>
+    </div>
+</div>
+
+<main>
+    <!-- 英雄区域 -->
+    <section class="detail-hero tea-hero">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <span class="text-gold">茶品系列</span>
+                <span>千年茶道，品味人生</span>
+            </h1>
+            <p class="hero-description">
+                精选名山茶叶，传承千年茶道文化，每一泡都是对生活的品味与尊重
+            </p>
+        </div>
+    </section>
+
+    <!-- 产品介绍 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-image">
+                    <img src="./image/吉祥1.png" alt="陈年普洱">
+                </div>
+                <div class="detail-content">
+                    <div class="badge">明星产品</div>
+                    <h2>奇楠沉香茶</h2>
+                    <p>
+                        味辛，性温，具有助眠安神的作用，还可通过对消化系统、循环系统等进行调节，达到降糖降压、护肝补肾、改善血管衰老的目的。
+                    </p>
+
+                    <button class="btn btn-primary" id="tea-contact-btn">联系我们了解更多</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--    &lt;!&ndash; 茶叶分类 &ndash;&gt;
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">茶叶分类</div>
+                <h2 class="section-title">中国传统六大茶类</h2>
+                <p class="section-description">
+                    中国茶文化源远流长，根据制作工艺的不同，传统上将茶叶分为六大类
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-leaf"></i></div>
+                    <div class="step-content">
+                        <h3>绿茶</h3>
+                        <p>
+                            绿茶是不经过发酵的茶，保留了鲜叶的天然物质，色泽翠绿，滋味鲜爽。代表茶有西湖龙井、碧螺春、黄山毛峰等。绿茶性凉，具有提神醒脑、消暑解渴、降火明目等功效。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-sun"></i></div>
+                    <div class="step-content">
+                        <h3>红茶</h3>
+                        <p>
+                            红茶是全发酵茶，经过萎凋、揉捻、发酵、干燥等工序制成。其汤色红艳，滋味醇厚，香气馥郁。代表茶有祁门红茶、滇红、正山小种等。红茶性温，具有暖胃、提神、解油腻等功效。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-mountain"></i></div>
+                    <div class="step-content">
+                        <h3>乌龙茶</h3>
+                        <p>
+                            乌龙茶是半发酵茶，介于绿茶和红茶之间。其香气高锐持久，滋味醇厚回甘。代表茶有铁观音、大红袍、凤凰单丛等。乌龙茶具有消脂减肥、降血压、抗衰老等功效。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-snowflake"></i></div>
+                    <div class="step-content">
+                        <h3>白茶</h3>
+                        <p>
+                            白茶是微发酵茶，采摘后只经过晒或文火干燥等简单工序制成。其外形芽毫完整，汤色杏黄清澈，滋味清淡甘爽。代表茶有白毫银针、白牡丹、寿眉等。白茶性凉，具有清热解毒、降火消炎等功效。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-history"></i></div>
+                    <div class="step-content">
+                        <h3>黄茶</h3>
+                        <p>
+                            黄茶是轻发酵茶，在制作过程中有独特的"闷黄"工序。其外形芽叶金黄，汤色杏黄，滋味醇和回甘。代表茶有君山银针、霍山黄芽等。黄茶性平，具有健脾养胃、提神醒脑等功效。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-wine-bottle"></i></div>
+                    <div class="step-content">
+                        <h3>黑茶</h3>
+                        <p>
+                            黑茶是后发酵茶，经过特殊的渥堆发酵工艺制成。其汤色红浓，滋味醇厚，具有独特的陈香。代表茶有普洱茶、安化黑茶等。黑茶性温，具有暖胃、降脂、助消化等功效。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- 茶道文化 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">茶道文化</div>
+                <h2 class="section-title">茶道的精神与仪式</h2>
+                <p class="section-description">
+                    茶道不仅是饮茶的方式，更是一种生活态度和精神追求
+                </p>
+            </div>
+
+            <div class="quality-features">
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-peace"></i>
+                    </div>
+                    <h3>和敬清寂</h3>
+                    <p>
+                        茶道的核心精神，强调人与人之间的和谐相处，对自然的敬畏，内心的清净与宁静。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>天人合一</h3>
+                    <p>
+                        茶道追求人与自然的和谐统一，通过品茶感受自然的馈赠，达到身心的平衡。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>以茶会友</h3>
+                    <p>
+                        茶是沟通的桥梁，通过品茶增进友谊，分享生活的喜悦与感悟。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>修身养性</h3>
+                    <p>
+                        茶道强调通过品茶过程中的专注与静思，达到修身养性、提升精神境界的目的。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更多产品 -->
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">产品系列</div>
+                <h2 class="section-title">更多茶品系列</h2>
+                <p class="section-description">
+                    探索我们的其他茶品，每一款都有其独特的风味与故事
+                </p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?tea,leaves" alt="西湖龙井">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">西湖龙井</h3>
+                        <p class="product-year">明前</p>
+                        <p class="product-description">产自西湖核心产区，色翠香郁，滋味鲜爽</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?oolong,tea" alt="武夷岩茶">
+                        <span class="product-badge">限量</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">武夷岩茶</h3>
+                        <p class="product-year">特级</p>
+                        <p class="product-description">产自武夷山核心产区，岩韵明显，香气高扬</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?white,tea" alt="福鼎白茶">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">福鼎白茶</h3>
+                        <p class="product-year">2018年</p>
+                        <p class="product-description">采用福鼎大白茶菜种，自然萎凋，清香淡雅</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="index.html#tea" class="btn btn-outline">返回产品列表</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid simplified">
+            <div class="footer-about">
+                <a href="index.html" class="logo">金润生</a>
+                <p>匠心制作。每一件产品都是时间与智慧的结晶。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="wine-detail.html">名酒系列</a></li>
+                    <li><a href="incense-detail.html">沉香系列</a></li>
+                    <li><a href="tea-detail.html">茶品系列</a></li>
+                    <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                    <li><a href="index.html#soap">皂膏油系列</a></li>
+                    <li><a href="index.html#bracelet">手串系列</a></li>
+                    <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                    <li><a href="#" class="footer-contact-btn">联系我们</a></li>
+                    <li><a href="about-us.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p>地址：广东省博罗县长宁镇澜石村王歇湖小组7号</p>
+                <p>电话：+86 13502457931</p>
+                <p>邮箱：1355419507@qq.com</p>
+                <p>营业时间：周一至周日 10:00-22:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 沉香臻品. 保留所有权利。</p>
+            <p>饮酒过量有害健康，请理性饮酒。未成年人请勿饮酒。</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

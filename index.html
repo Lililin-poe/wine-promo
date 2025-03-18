@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOBLE VINE - 臻品佳酿</title>
+    <title>沉香臻品 - 传统臻品，匠心工艺</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./image/logo.png" type="image/x-icon">
 </head>
-<body class="bg-black text-white">
+<body class="bg-black">
 <!-- 年龄验证弹窗 -->
-<div id="age-verification" class="fixed-overlay">
+<div id="age-verification" class="fixed-overlay" style="display: none;">
     <div class="modal">
         <div class="modal-icon">
-            <i class="fas fa-wine-glass-alt"></i>
+            <i class="fas fa-wine-bottle"></i>
         </div>
         <h2>年龄验证</h2>
         <p>欢迎访问我们的网站。请确认您已达到您所在国家/地区的法定饮酒年龄。</p>
@@ -32,7 +33,7 @@
         </button>
         <h2>关注我们的公众号</h2>
         <div class="qrcode-container">
-            <img src="https://source.unsplash.com/random/300x300/?qrcode" alt="公众号二维码" id="qrcode-image">
+            <img src="./image/公众号.png" alt="公众号二维码" id="qrcode-image">
         </div>
         <p>扫描上方二维码，关注我们的公众号，了解更多产品信息和活动。</p>
     </div>
@@ -42,13 +43,17 @@
 <header class="sticky-header">
     <div class="container">
         <nav>
-            <a href="#" class="logo">NOBLE VINE</a>
+            <a href="index.html" class="logo">罗浮金润生</a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#collection">产品系列</a></li>
-                <li><a href="#story">品牌故事</a></li>
-                <li><a href="#gallery">酒庄展示</a></li>
-                <li><a href="#testimonials">顾客评价</a></li>
+                <li><a href="wine-detail.html">名酒系列</a></li>
+                <li><a href="incense-detail.html">沉香系列</a></li>
+                <li><a href="tea-detail.html">茶品系列</a></li>
+                <!-- 修改皂膏油系列和手串系列的跳转逻辑 -->
+                <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+                <li><a href="index.html#bracelet">手串系列</a></li>-->
+                <!-- 联系我们保持显示二维码弹窗逻辑 -->
                 <li><a href="#" id="contact-btn">联系我们</a></li>
+                <li><a href="about-us.html">关于我们</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="menu-toggle" id="menu-toggle" aria-label="菜单">
@@ -63,17 +68,21 @@
 <div id="mobile-menu" class="mobile-menu">
     <div class="container">
         <div class="mobile-menu-header">
-            <a href="#" class="logo">NOBLE VINE</a>
+            <a href="index.html" class="logo">沉香臻品</a>
             <button class="close-menu" id="close-menu">
                 <i class="fas fa-times"></i>
             </button>
         </div>
         <ul class="mobile-nav-links">
-            <li><a href="#collection">产品系列</a></li>
-            <li><a href="#story">品牌故事</a></li>
-            <li><a href="#gallery">酒庄展示</a></li>
-            <li><a href="#testimonials">顾客评价</a></li>
+            <li><a href="wine-detail.html">名酒系列</a></li>
+            <li><a href="incense-detail.html">沉香系列</a></li>
+            <li><a href="tea-detail.html">茶品系列</a></li>
+            <!-- 修改皂膏油系列和手串系列的跳转逻辑 -->
+           <!-- <li><a href="index.html#soap">皂膏油系列</a></li>
+            <li><a href="index.html#bracelet">手串系列</a></li>-->
+            <!-- 联系我们保持显示二维码弹窗逻辑 -->
             <li><a href="#" class="mobile-contact-btn">联系我们</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
         </ul>
     </div>
 </div>
@@ -84,11 +93,11 @@
         <div class="hero-overlay"></div>
         <div class="container text-center">
             <h1 class="hero-title">
-                <span class="text-amber">臻品佳酿</span>
+                <span class="text-gold">沉香臻品</span>
                 <span>匠心独具的艺术</span>
             </h1>
             <p class="hero-description">
-                源自百年传承的酿造工艺，每一滴都蕴含着时间的馈赠与自然的恩惠，带您领略非凡的味觉盛宴。
+                源自传统工艺，每一件产品都蕴含着匠人的智慧与自然的馈赠，带您领略东方文化的精髓
             </p>
             <div class="button-group">
                 <button class="btn btn-primary" id="hero-contact-btn">联系我们</button>
@@ -107,40 +116,40 @@
     <section class="features-section" id="features">
         <div class="container">
             <div class="section-header text-center">
-                <div class="badge">卓越品质</div>
-                <h2 class="section-title">非凡特性，独特体验</h2>
+                <div class="badge">品质保证</div>
+                <h2 class="section-title">臻品特性，匠心工艺</h2>
                 <p class="section-description">
-                    每一瓶都是精心挑选的佳酿，带给您无与伦比的味觉享受
+                    每一件产品都经过严格筛选和精心制作，传承千年工艺，融合现代科技
                 </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-wine-bottle"></i>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3>精选葡萄</h3>
-                    <p>采用世界顶级葡萄园的优质葡萄，确保每一滴酒都蕴含丰富的风味</p>
+                    <h3>传统工艺</h3>
+                    <p>传承千年技艺，每一道工序都遵循古法，保留原汁原味</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>有机种植</h3>
-                    <p>坚持有机种植理念，不使用化学农药，尊重自然，呵护健康</p>
+                    <h3>天然原料</h3>
+                    <p>精选优质原材料，不添加化学成分，呵护您的健康</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-tint"></i>
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <h3>传统工艺</h3>
-                    <p>传承百年酿造技艺，结合现代科技，打造完美平衡的口感</p>
+                    <h3>品质认证</h3>
+                    <p>通过国际权威认证，品质有保障，安心使用</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-award"></i>
+                        <i class="fas fa-hands"></i>
                     </div>
-                    <h3>国际认证</h3>
-                    <p>荣获多项国际大奖，品质获得全球专业评审的一致认可</p>
+                    <h3>匠心制作</h3>
+                    <p>每一件产品都由经验丰富的匠人手工制作，精益求精</p>
                 </div>
             </div>
         </div>
@@ -152,27 +161,27 @@
             <div class="story-grid">
                 <div class="story-content">
                     <div class="badge">品牌故事</div>
-                    <h2 class="section-title">百年传承，匠心酿造</h2>
+                    <h2 class="section-title">传承千年，匠心独运</h2>
                     <p>
-                        始于1886年，我们的酒庄坐落于世界著名的葡萄酒产区，拥有得天独厚的自然条件。几代酿酒师的智慧与热情，铸就了今天的卓越品质。
+                        我们的品牌源于对传统文化的热爱与传承。多年来，我们致力于将古老的东方智慧与现代生活方式相结合，为您带来兼具实用性与艺术性的臻品。
                     </p>
                     <p>
-                        我们坚持传统与创新并重，尊重自然规律，精心呵护每一株葡萄藤，只为在每一瓶酒中注入灵魂与情感。
+                        从名贵沉香到精致手串，从优质茶品到养生酒品，我们坚持选用最优质的原材料，遵循传统工艺，融入现代科技，只为呈现最纯正的东方美学。
                     </p>
                     <p>
-                        从葡萄园到酒窖，从橡木桶到酒瓶，我们对细节的执着追求，成就了这款令人难忘的佳酿。
+                        每一件产品都凝聚着匠人的智慧与汗水，是东方文化的精髓，更是生活品质的象征。
                     </p>
                     <div class="divider">
-                        <span class="text-amber">自1886年</span>
+                        <span class="text-gold">匠心传承</span>
                     </div>
                 </div>
                 <div class="story-image">
                     <div class="image-overlay"></div>
                     <blockquote>
-                        "真正的艺术在于尊重传统，同时不断探索创新，就像我们酿造的每一瓶酒。"
+                        "真正的匠人精神在于对传统的尊重与创新的勇气，就像我们制作的每一件产品。"
                         <div class="quote-author">
                             <div class="quote-line"></div>
-                            <span>首席酿酒师</span>
+                            <span>创始人</span>
                         </div>
                     </blockquote>
                 </div>
@@ -180,22 +189,313 @@
         </div>
     </section>
 
-    <!-- 产品系列 -->
-    <section class="collection-section" id="collection">
+    <!-- 产品分类导航 -->
+    <section class="category-nav-section">
         <div class="container">
-            <div class="section-header text-center">
-                <div class="badge">臻品系列</div>
-                <h2 class="section-title">探索我们的精选佳酿</h2>
-                <p class="section-description">
-                    每一款酒都有其独特的个性和故事，邀您共同品鉴
-                </p>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="wine">名酒系列</button>
+                <button class="category-tab" data-category="incense">沉香系列</button>
+                <button class="category-tab" data-category="tea">茶品系列</button>
+                <button class="category-tab" data-category="soap">皂膏油系列</button>
+                <button class="category-tab" data-category="bracelet">手串系列</button>
             </div>
-            <div class="wine-grid" id="wine-collection">
-                <!-- 动态加载产品 -->
+        </div>
+    </section>
+
+    <!-- 产品展示区域 -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <!-- 名酒系列 -->
+            <div class="product-category active" id="wine">
+                <div class="category-header">
+                    <h2 class="category-title">名酒系列</h2>
+                    <p class="category-description">精选优质原料，传承百年酿造工艺，每一瓶都是时间的艺术品</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/500ml酒.png" alt="金润生酒">
+                            <span class="product-badge">限量版</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">金润生珍藏版</h3>
+                            <p class="product-year">2015年</p>
+                            <p class="product-description">金色龙纹瓶身，酒体醇厚，口感绵长，余韵悠长</p>
+                            <!-- 修改了解更多按钮，添加 data-target 属性 -->
+                            <button class="btn btn-outline btn-sm" data-target="wine-detail.html">了解更多</button>
+                        </div>
+                    </div>
+                    <!-- 其他产品卡片保持不变 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/375酒1.jpg" alt="陈年佳酿">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">陈年佳酿</h3>
+                            <p class="product-year">2010年</p>
+                            <p class="product-description">十年陈酿，香气馥郁，入口柔和，回味无穷</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/375ml酒4.jpg" alt="传世珍藏">
+                            <span class="product-badge">新品</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">传世珍藏</h3>
+                            <p class="product-year">2018年</p>
+                            <p class="product-description">精选原料，传统工艺，口感醇厚，适合收藏与品鉴</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/375酒3.jpg" alt="金玉满堂">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">金玉满堂</h3>
+                            <p class="product-year">2016年</p>
+                            <p class="product-description">甄选上等粮食，古法酿造，馥郁芳香，回味悠长</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <!-- 查看更多名酒详情已正确跳转，无需修改 -->
+                    <a href="wine-detail.html" class="btn btn-primary">查看更多名酒详情</a>
+                </div>
             </div>
-            <div class="text-center mt-8">
-                <button class="btn btn-primary" id="collection-contact-btn">联系我们了解更多</button>
+
+            <!-- 沉香系列 -->
+            <div class="product-category" id="incense">
+                <div class="category-header">
+                    <h2 class="category-title">沉香系列</h2>
+                    <p class="category-description">源自自然的珍稀宝藏，每一缕香气都是心灵的慰藉与灵魂的净化</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/6片装祥云香.png" alt="祥云香">
+                            <span class="product-badge">珍稀</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">天然沉香</h3>
+                            <p class="product-year">特级</p>
+                            <p class="product-description">百年沉香树，天然形成，香气醇厚持久，静心凝神</p>
+                            <!-- 修改了解更多按钮，添加 data-target 属性 -->
+                            <button class="btn btn-outline btn-sm" data-target="incense-detail.html">了解更多</button>
+                        </div>
+                    </div>
+                    <!-- 其他产品卡片保持不变 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/倒流香1.png" alt="倒流香">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香木雕</h3>
+                            <p class="product-year">精品</p>
+                            <p class="product-description">匠人手工雕刻，栩栩如生，既是艺术品，又可熏香</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/红土奇线香2.png" alt="红木奇线香">
+                            <span class="product-badge">畅销</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香线香</h3>
+                            <p class="product-year">高级</p>
+                            <p class="product-description">采用优质沉香粉，手工制作，香气纯正，燃烧均匀</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/竹签香2.png" alt="竹签香">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">竹签香</h3>
+                            <p class="product-year">日常护理</p>
+                            <p class="product-description">添加沉香精华，滋养头皮，令秀发柔顺亮泽</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <!-- 查看更多沉香详情已正确跳转，无需修改 -->
+                    <a href="incense-detail.html" class="btn btn-primary">查看更多沉香详情</a>
+                </div>
             </div>
+
+            <!-- 茶品系列 -->
+            <div class="product-category" id="tea">
+                <div class="category-header">
+                    <h2 class="category-title">茶品系列</h2>
+                    <p class="category-description">精选名山茶叶，传承千年茶道文化，每一泡都是对生活的品味与尊重</p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/吉祥1.png" alt="陈年普洱">
+                            <span class="product-badge">珍藏</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">陈年普洱</h3>
+                            <p class="product-year">2005年</p>
+                            <p class="product-description">云南大叶种，自然发酵，香气醇厚，回甘持久</p>
+                            <!-- 修改了解更多按钮，添加 data-target 属性 -->
+                            <button class="btn btn-outline btn-sm" data-target="tea-detail.html">了解更多</button>
+                        </div>
+                    </div>
+                    <!-- 其他产品卡片保持不变 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/如意1.png" alt="西湖龙井">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">西湖龙井</h3>
+                            <p class="product-year">明前</p>
+                            <p class="product-description">产自西湖核心产区，色翠香郁，滋味鲜爽</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/龙凤1.png" alt="武夷岩茶">
+                            <span class="product-badge">限量</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">武夷岩茶</h3>
+                            <p class="product-year">特级</p>
+                            <p class="product-description">产自武夷山核心产区，岩韵明显，香气高扬</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/双龙1.png" alt="福鼎白茶">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">福鼎白茶</h3>
+                            <p class="product-year">2018年</p>
+                            <p class="product-description">采用福鼎大白茶菜种，自然萎凋，清香淡雅</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <!-- 查看更多茶品详情已正确跳转，无需修改 -->
+                    <a href="tea-detail.html" class="btn btn-primary">查看更多茶品详情</a>
+                </div>
+            </div>
+
+            <!-- 其他分类保持不变 -->
+            <!-- 皂膏油系列 -->
+            <div class="product-category" id="soap">
+                <div class="section-header text-center">
+                    <div class="badge">臻品系列</div>
+                    <h2 class="section-title">皂膏油系列</h2>
+                    <p class="section-description">
+                        天然成分，呵护肌肤，传承古法护肤智慧
+                    </p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/chenxiangzao.png" alt="沉香精油皂">
+                            <span class="product-badge">热销</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香精油皂</h3>
+                            <p class="product-year">手工制作</p>
+                            <p class="product-description">添加沉香精油，温和清洁，滋润肌肤</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/精油3.png" alt="沉香精油">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香精油</h3>
+                            <p class="product-year">限量版</p>
+                            <p class="product-description">传统配方，天然植物油脂，温和不刺激</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/奇楠膏2.png" alt="奇楠膏">
+                            <span class="product-badge">新品</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">奇楠膏</h3>
+                            <p class="product-year">高级</p>
+                            <p class="product-description">驱蚊，止痒</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/精油1png.png" alt="沉香精油">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香精油</h3>
+                            <p class="product-year">古方</p>
+                            <p class="product-description">传统配方，天然植物油脂，温和不刺激</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 手串系列 -->
+            <div class="product-category" id="bracelet">
+                <div class="section-header text-center">
+                    <div class="badge">臻品系列</div>
+                    <h2 class="section-title">手串系列</h2>
+                    <p class="section-description">
+                        精选天然材质，匠心打磨，彰显品味与格调
+                    </p>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/手串1.png" alt="沉香手串">
+                            <span class="product-badge">珍稀</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">沉香手串</h3>
+                            <p class="product-year">特级</p>
+                            <p class="product-description">采用优质沉香木，手工打磨，香气持久，佩戴舒适</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/手串2.png" alt="手串">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">波罗的海琥珀</h3>
+                            <p class="product-year">天然</p>
+                            <p class="product-description">天然琥珀，色泽温润，质地通透，内含丰富虫珀</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="./image/手串3.png" alt="手串">
+                            <span class="product-badge">精品</span>
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title">手串</h3>
+                            <p class="product-year">108颗</p>
+                            <p class="product-description">新疆和田玉，质地细腻，温润如脂，佩戴舒适</p>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://source.unsplash.com/random/200x500/?bracelet,buddhist" alt="菩提子手串">
+                        </div>
+                        <div class="product-details">
+                            <h3 class="product-title"></h3>
+                            <p class="product-year">108颗</p>
+                            <p class="product-description">尼泊尔进口星月菩提，纹理清晰，盘玩包浆</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 联系我们按钮保持显示二维码弹窗逻辑 -->
+        <div class="text-center mt-8">
+            <button class="btn btn-primary" id="products-contact-btn">联系我们了解更多</button>
         </div>
     </section>
 
@@ -204,9 +504,9 @@
         <div class="container">
             <div class="section-header text-center">
                 <div class="badge">视觉盛宴</div>
-                <h2 class="section-title">探索我们的酒庄</h2>
+                <h2 class="section-title">产品展示</h2>
                 <p class="section-description">
-                    从葡萄园到酒窖，每一个环节都充满匠心
+                    精美产品，匠心工艺，每一件都是艺术品
                 </p>
             </div>
             <div class="gallery-slider">
@@ -226,21 +526,21 @@
         </div>
     </section>
 
-    <!-- 顾客评价 -->
+    <!--&lt;!&ndash; 顾客评价 &ndash;&gt;
     <section class="testimonials-section" id="testimonials">
         <div class="container">
             <div class="section-header text-center">
                 <div class="badge">顾客评价</div>
                 <h2 class="section-title">品鉴者的心声</h2>
                 <p class="section-description">
-                    听听我们的顾客如何评价这款非凡的佳酿
+                    听听我们的顾客如何评价这些臻品
                 </p>
             </div>
             <div class="testimonials-grid" id="testimonials-container">
-                <!-- 动态加载评价 -->
+                &lt;!&ndash; 动态加载评价 &ndash;&gt;
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- 联系我们 -->
     <section class="contact-section" id="contact">
@@ -258,21 +558,21 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>地址</h3>
-                            <p>中国北京市朝阳区酒仙桥路10号</p>
+                            <p>广东省博罗县长宁镇澜石村王歇湖小组7号</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>电话</h3>
-                            <p>+86 10 8888 8888</p>
+                            <p>+86 13502457931</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>邮箱</h3>
-                            <p>info@noblevine.com</p>
+                            <p>1355419507@qq.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -298,39 +598,43 @@
     <div class="container">
         <div class="footer-grid simplified">
             <div class="footer-about">
-                <a href="#" class="logo">NOBLE VINE</a>
-                <p>匠心酿造，传承百年。每一瓶都是时间与自然的艺术品。</p>
+                <a href="index.html" class="logo">金润生</a>
+                <p>匠心制作。每一件产品都是时间与智慧的结晶。</p>
                 <div class="social-links">
                     <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h3>快速链接</h3>
                 <ul>
-                    <li><a href="#collection">产品系列</a></li>
-                    <li><a href="#story">品牌故事</a></li>
-                    <li><a href="#gallery">酒庄展示</a></li>
-                    <li><a href="#testimonials">顾客评价</a></li>
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="wine-detail.html">名酒系列</a></li>
+                    <li><a href="incense-detail.html">沉香系列</a></li>
+                    <li><a href="tea-detail.html">茶品系列</a></li>
+                    <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                    <li><a href="index.html#soap">皂膏油系列</a></li>
+                    <li><a href="index.html#bracelet">手串系列</a></li>
+                    <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                    <li><a href="#" class="footer-contact-btn">联系我们</a></li>
+                    <li><a href="about-us.html">关于我们</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h3>联系我们</h3>
-                <p>地址：中国北京市朝阳区酒仙桥路10号</p>
-                <p>电话：+86 10 8888 8888</p>
-                <p>邮箱：info@noblevine.com</p>
+                <p>地址：广东省博罗县长宁镇澜石村王歇湖小组7号</p>
+                <p>电话：+86 13502457931</p>
+                <p>邮箱：1355419507@qq.com</p>
                 <p>营业时间：周一至周日 10:00-22:00</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 NOBLE VINE. 保留所有权利。</p>
+            <p>&copy; 2023 沉香臻品. 保留所有权利。</p>
             <p>饮酒过量有害健康，请理性饮酒。未成年人请勿饮酒。</p>
         </div>
     </div>
 </footer>
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
+

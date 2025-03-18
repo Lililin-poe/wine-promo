@@ -1,13 +1,17 @@
 /* 基础样式 */
 :root {
-    --color-primary: #ffc107;
-    --color-primary-hover: #e6ac00;
-    --color-secondary: #1a1a1a;
+    --color-primary: #FFD700; /* 金色 */
+    --color-primary-hover: #DAA520; /* 深金色 */
+    --color-secondary: #90EE90; /* 翠绿色 */
+    --color-secondary-dark: #2E8B57; /* 深绿色 */
+    --color-accent: #8B4513; /* 棕色 */
     --color-background: #000000;
-    --color-text: #ffffff;
-    --color-text-secondary: #999999;
-    --color-border: rgba(255, 255, 255, 0.1);
-    --color-card-bg: rgba(30, 30, 30, 0.5);
+    --color-text: #333333;
+    --color-text-light: #ffffff;
+    --color-text-secondary: #CCCCCC;
+    --color-border: rgba(255, 215, 0, 0.3); /* 淡金色边框 */
+    --color-card-bg: rgba(0, 0, 0, 0.8);
+    --gradient-gold: linear-gradient(135deg, #FFD700, #DAA520);
     --transition: all 0.3s ease;
 }
 
@@ -25,8 +29,9 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--color-background);
-    color: var(--color-text);
+    color: var(--color-text-light);
     overflow-x: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm0 4c7.732 0 14 6.268 14 14s-6.268 14-14 14-14-6.268-14-14 6.268-14 14-14zm0 2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z' fill='%23FFD700' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .container {
@@ -41,7 +46,7 @@ body {
     text-align: center;
 }
 
-.text-amber {
+.text-gold {
     color: var(--color-primary);
 }
 
@@ -71,13 +76,14 @@ body {
 }
 
 .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    background: var(--gradient-gold);
+    color: var(--color-text);
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.1);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-primary-hover);
     transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 215, 0, 0.2);
 }
 
 .btn-secondary {
@@ -86,19 +92,19 @@ body {
 }
 
 .btn-secondary:hover {
-    background-color: #333;
+    background-color: var(--color-secondary-dark);
     transform: translateY(-2px);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--color-text);
-    border: 2px solid var(--color-text);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-primary);
 }
 
 .btn-outline:hover {
-    background-color: var(--color-text);
-    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    color: var(--color-text);
     transform: translateY(-2px);
 }
 
@@ -113,7 +119,7 @@ body {
 /* 徽章 */
 .badge {
     display: inline-block;
-    background-color: rgba(255, 193, 7, 0.2);
+    background-color: rgba(255, 215, 0, 0.2);
     color: var(--color-primary);
     padding: 0.25rem 0.75rem;
     border-radius: 1rem;
@@ -154,7 +160,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--color-text);
+    color: var(--color-text-light);
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
@@ -174,7 +180,7 @@ nav {
     display: none;
     background: transparent;
     border: none;
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -207,7 +213,7 @@ nav {
 .close-menu {
     background: transparent;
     border: none;
-    color: var(--color-text);
+    color: var(--color-text-light);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -222,7 +228,7 @@ nav {
 }
 
 .mobile-nav-links a {
-    color: var(--color-text);
+    color: var(--color-text-light);
     text-decoration: none;
     font-size: 1.25rem;
     transition: var(--transition);
@@ -250,7 +256,7 @@ nav {
 }
 
 .modal {
-    background-color: var(--color-secondary);
+    background-color: #111;
     border-radius: 1rem;
     border: 1px solid var(--color-border);
     padding: 2rem;
@@ -263,8 +269,8 @@ nav {
 .modal-icon {
     width: 4rem;
     height: 4rem;
-    background-color: var(--color-secondary);
-    border: 4px solid #333;
+    background-color: #111;
+    border: 4px solid var(--color-border);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -276,6 +282,7 @@ nav {
 
 .modal h2 {
     margin-bottom: 1rem;
+    color: var(--color-text-light);
 }
 
 .modal p {
@@ -301,7 +308,7 @@ nav {
 }
 
 .close-modal:hover {
-    color: var(--color-text);
+    color: var(--color-text-light);
 }
 
 .qrcode-container {
@@ -331,7 +338,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('https://source.unsplash.com/random/1920x1080/?vineyard,wine');
+    background-image: url('https://source.unsplash.com/random/1920x1080/?chinese,traditional');
     background-size: cover;
     background-position: center;
     z-index: -2;
@@ -343,7 +350,7 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: -1;
 }
 
@@ -382,7 +389,7 @@ nav {
 .mouse {
     width: 1.5rem;
     height: 2.5rem;
-    border: 2px solid rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 215, 0, 0.5);
     border-radius: 1rem;
     position: relative;
     display: flex;
@@ -393,7 +400,7 @@ nav {
 .mouse-wheel {
     width: 0.375rem;
     height: 0.375rem;
-    background-color: white;
+    background-color: var(--color-primary);
     border-radius: 50%;
     animation: scroll 1.5s infinite;
 }
@@ -424,7 +431,7 @@ nav {
 /* 产品特性 */
 .features-section {
     padding: 6rem 0;
-    background: linear-gradient(to bottom, var(--color-background), var(--color-secondary));
+    background: linear-gradient(to bottom, var(--color-background), #111);
 }
 
 .section-header {
@@ -435,6 +442,7 @@ nav {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    color: var(--color-text-light);
 }
 
 .section-description {
@@ -450,7 +458,7 @@ nav {
 }
 
 .feature-card {
-    background-color: rgba(30, 30, 30, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 2rem;
@@ -460,13 +468,13 @@ nav {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 193, 7, 0.5);
+    border-color: var(--color-primary);
 }
 
 .feature-icon {
     width: 4rem;
     height: 4rem;
-    background-color: rgba(255, 193, 7, 0.2);
+    background-color: rgba(255, 215, 0, 0.1);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -479,6 +487,7 @@ nav {
 .feature-card h3 {
     margin-bottom: 1rem;
     font-size: 1.25rem;
+    color: var(--color-text-light);
 }
 
 .feature-card p {
@@ -488,7 +497,7 @@ nav {
 /* 品牌故事 */
 .story-section {
     padding: 6rem 0;
-    background-color: var(--color-secondary);
+    background-color: #111;
 }
 
 .story-grid {
@@ -514,7 +523,7 @@ nav {
     content: '';
     flex: 1;
     height: 1px;
-    background-color: #333;
+    background-color: var(--color-border);
 }
 
 .divider span {
@@ -528,7 +537,7 @@ nav {
     height: 600px;
     border-radius: 1rem;
     overflow: hidden;
-    background-image: url('https://source.unsplash.com/random/600x600/?winery,vineyard');
+    background-image: url('https://source.unsplash.com/random/600x600/?chinese,craft');
     background-size: cover;
     background-position: center;
 }
@@ -549,6 +558,7 @@ blockquote {
     max-width: 80%;
     font-style: italic;
     font-size: 1.25rem;
+    color: var(--color-text-light);
 }
 
 .quote-author {
@@ -570,92 +580,135 @@ blockquote {
     font-style: normal;
 }
 
-/* 产品系列 */
-.collection-section {
-    padding: 6rem 0;
+/* 产品分类导航 */
+.category-nav-section {
+    padding: 2rem 0;
     background-color: var(--color-background);
 }
 
-.wine-grid {
+.category-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-tab {
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 2rem;
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.category-tab:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.category-tab.active {
+    background: var(--gradient-gold);
+    border-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* 产品展示区域 */
+.products-section {
+    padding: 4rem 0 6rem;
+    background-color: var(--color-background);
+}
+
+.product-category {
+    display: none;
+}
+
+.product-category.active {
+    display: block;
+}
+
+.product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 3rem;
 }
 
-.wine-card {
-    background-color: var(--color-card-bg);
+.product-card {
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     overflow: hidden;
+    transition: var(--transition);
+    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 100%;
 }
 
-.wine-image {
-    padding-top: 2rem;
-    background: linear-gradient(to bottom, #1a1a1a, #000);
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: 0 10px 20px rgba(255, 215, 0, 0.1);
+}
+
+.product-image {
+    padding: 2rem;
+    background: linear-gradient(to bottom, #111, #000);
     display: flex;
     justify-content: center;
     position: relative;
 }
 
-.wine-badge {
+.product-badge {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    top: 1rem;
+    right: 1rem;
+    background: var(--gradient-gold);
+    color: var(--color-text);
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     border-radius: 1rem;
 }
 
-.wine-image img {
+.product-image img {
     height: 300px;
     width: auto;
     object-fit: contain;
 }
 
-.wine-details {
+.product-details {
     padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.wine-title {
+.product-title {
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
+    color: var(--color-text-light);
 }
 
-.wine-year {
+.product-year {
     color: var(--color-primary);
     font-size: 0.875rem;
     margin-bottom: 1rem;
 }
 
-.wine-description {
+.product-description {
     color: var(--color-text-secondary);
     margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
-.wine-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 1rem;
-    border-top: 1px solid var(--color-border);
-}
-
-.wine-price {
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
 /* 产品画廊 */
 .gallery-section {
     padding: 6rem 0;
-    background-color: var(--color-secondary);
+    background-color: #111;
 }
 
 .gallery-slider {
@@ -760,7 +813,7 @@ blockquote {
 }
 
 .testimonial-card {
-    background-color: var(--color-card-bg);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 2rem;
@@ -789,6 +842,7 @@ blockquote {
 .testimonial-author h4 {
     font-size: 1rem;
     margin-bottom: 0.25rem;
+    color: var(--color-text-light);
 }
 
 .testimonial-author p {
@@ -814,7 +868,7 @@ blockquote {
 /* 联系我们 */
 .contact-section {
     padding: 6rem 0;
-    background-color: var(--color-secondary);
+    background-color: #111;
 }
 
 .contact-content {
@@ -837,6 +891,7 @@ blockquote {
 
 .contact-item h3 {
     margin-bottom: 0.5rem;
+    color: var(--color-text-light);
 }
 
 .contact-item p {
@@ -844,7 +899,7 @@ blockquote {
 }
 
 .contact-cta {
-    background-color: var(--color-card-bg);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     padding: 2rem;
@@ -853,6 +908,7 @@ blockquote {
 
 .contact-cta h3 {
     margin-bottom: 1rem;
+    color: var(--color-text-light);
 }
 
 .contact-cta p {
@@ -879,7 +935,7 @@ blockquote {
 }
 
 .footer h3 {
-    color: white;
+    color: var(--color-text-light);
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
 }
@@ -899,17 +955,18 @@ blockquote {
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 215, 0, 0.1);
     color: var(--color-text-secondary);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .social-link:hover {
     background-color: var(--color-primary);
-    color: var(--color-secondary);
+    color: var(--color-text);
 }
 
 .footer-links ul {
@@ -955,6 +1012,10 @@ blockquote {
     .footer-grid.simplified {
         grid-template-columns: 1fr;
     }
+
+    .category-tabs {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 768px) {
@@ -973,6 +1034,10 @@ blockquote {
     .section-title {
         font-size: 2rem;
     }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 }
 
 @media (max-width: 576px) {
@@ -982,5 +1047,343 @@ blockquote {
 
     .button-group {
         flex-direction: column;
+    }
+
+    .feature-card,
+    .product-card,
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .product-image img {
+        height: 200px;
+    }
+}
+/* 详情页面样式 */
+.detail-hero {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+    overflow: hidden;
+}
+
+.detail-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.wine-hero::before {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?wine,chinese');
+}
+
+.tea-hero::before {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?tea,chinese');
+}
+
+.incense-hero::before {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?incense,chinese');
+}
+
+.about-hero::before {
+    background-image: url('https://source.unsplash.com/random/1920x1080/?chinese,traditional');
+}
+
+.detail-section {
+    padding: 5rem 0;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.detail-image {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.detail-content h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--color-text-light);
+}
+
+.detail-content p {
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+}
+
+.process-steps {
+    margin-top: 3rem;
+}
+
+.process-step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.step-number {
+    width: 3rem;
+    height: 3rem;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.step-content p {
+    color: var(--color-text-secondary);
+}
+
+.quality-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.quality-feature {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.quality-feature:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+.quality-icon {
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
+.quality-feature h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+}
+
+.quality-feature p {
+    color: var(--color-text-secondary);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-member {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+}
+
+.team-photo {
+    height: 300px;
+    overflow: hidden;
+}
+
+.team-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.team-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.team-info p.role {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.team-info p.bio {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--color-border);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 2.5rem 2.5rem;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--gradient-gold);
+    border-radius: 50%;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -0.75rem;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -0.75rem;
+}
+
+.timeline-date {
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+}
+
+.timeline-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+}
+
+.timeline-content p {
+    color: var(--color-text-secondary);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+@media (max-width: 992px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .timeline::before {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 4rem;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) {
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .timeline::before {
+        left: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 3rem;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 0.25rem;
     }
 }

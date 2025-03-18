@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沉香系列详情 - 沉香臻品</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./image/logo.png" type="image/x-icon">
+</head>
+<body class="bg-black">
+<!-- 头部导航 -->
+<header class="sticky-header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">沉香臻品</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="wine-detail.html">名酒系列</a></li>
+                <li><a href="incense-detail.html">沉香系列</a></li>
+                <li><a href="tea-detail.html">茶品系列</a></li>
+                <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+                <li><a href="index.html#bracelet">手串系列</a></li>-->
+                <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                <li><a href="#" id="contact-btn">联系我们</a></li>
+                <li><a href="about-us.html">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menu-toggle" aria-label="菜单">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- 移动端菜单 -->
+<div id="mobile-menu" class="mobile-menu">
+    <div class="container">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">沉香臻品</a>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="wine-detail.html">名酒系列</a></li>
+            <li><a href="incense-detail.html">沉香系列</a></li>
+            <li><a href="tea-detail.html">茶品系列</a></li>
+            <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+            <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+            <li><a href="index.html#bracelet">手串系列</a></li>-->
+            <!-- 联系我们保持显示二维码弹窗逻辑 -->
+            <li><a href="#" class="mobile-contact-btn">联系我们</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 公众号弹窗 -->
+<div id="qrcode-modal" class="fixed-overlay" style="display: none;">
+    <div class="modal">
+        <button class="close-modal" id="close-qrcode">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>关注我们的公众号</h2>
+        <div class="qrcode-container">
+            <img src="./image/商城小程序图.jpg" alt="公众号二维码" id="qrcode-image">
+        </div>
+        <p>扫描上方二维码，关注我们的公众号，了解更多产品信息和活动。</p>
+    </div>
+</div>
+
+<main>
+    <!-- 英雄区域 -->
+    <section class="detail-hero incense-hero">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <span class="text-gold">沉香系列</span>
+                <span>自然馈赠，灵魂净化</span>
+            </h1>
+            <p class="hero-description">
+                源自自然的珍稀宝藏，每一缕香气都是心灵的慰藉与灵魂的净化
+            </p>
+        </div>
+    </section>
+
+    <!-- 产品介绍 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-image">
+                    <img src="https://source.unsplash.com/random/600x600/?incense,agarwood" alt="天然沉香">
+                </div>
+                <div class="detail-content">
+                    <div class="badge">明星产品</div>
+                    <h2>天然沉香</h2>
+                    <p>
+                        沉香，又称"香中之王"，是世界上最珍贵的香料之一。我们的天然沉香产自东南亚古老的沉香树，经过自然形成，不经任何人工处理，保留了最纯正的香气。
+                    </p>
+                    <p>
+                        沉香的形成需要特定的条件和漫长的时间，是大自然的馈赠。当沉香树受到外界刺激或自然伤害时，树体会分泌树脂进行自我修复，这些树脂在长时间的氧化和微生物作用下，逐渐形成了珍贵的沉香。
+                    </p>
+                    <p>
+                        我们的沉香具有独特的香气，前调清新淡雅，中调醇厚持久，后调回甘悠长。点燃后，香气缓缓释放，能够安神静心，净化空间，是冥想、品茗、修身养性的绝佳伴侣。
+                    </p>
+                    <button class="btn btn-primary" id="incense-contact-btn">联系我们了解更多</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 沉香分类 -->
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">沉香分类</div>
+                <h2 class="section-title">沉香的种类与特点</h2>
+                <p class="section-description">
+                    不同产地、不同形成方式的沉香具有不同的特点和价值
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-leaf"></i></div>
+                    <div class="step-content">
+                        <h3>奇楠沉香</h3>
+                        <p>
+                            奇楠是沉香中的极品，主要产自马来西亚、印尼等地。其香气独特，具有明显的甜、凉、润、滑等特点，点燃后香气层次丰富，回味悠长。奇楠沉香极为稀少，被誉为"香中之王"。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-tree"></i></div>
+                    <div class="step-content">
+                        <h3>伽罗沉香</h3>
+                        <p>
+                            伽罗沉香主要产自越南，是沉香中的高级品种。其香气浓郁持久，带有独特的甜味和药香，点燃后香气四溢，能够持续很长时间。伽罗沉香质地坚硬，油脂含量高，是收藏的上佳之选。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-mountain"></i></div>
+                    <div class="step-content">
+                        <h3>星洲沉香</h3>
+                        <p>
+                            星洲沉香主要产自新加坡、马来西亚等地，香气清新淡雅，带有淡淡的花香和果香。点燃后香气温和，不刺激，适合日常使用。星洲沉香是入门级沉香的不错选择。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number"><i class="fas fa-water"></i></div>
+                    <div class="step-content">
+                        <h3>水沉香</h3>
+                        <p>
+                            水沉香是指在水中沉淀的沉香，主要产自印尼、马来西亚等地。其香气清新，带有淡淡的水气和木香。水沉香质地较软，油脂含量适中，价格相对亲民，是日常使用的理想选择。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 沉香功效 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">功效与作用</div>
+                <h2 class="section-title">沉香的传统功效</h2>
+                <p class="section-description">
+                    沉香在传统文化中被视为珍贵的药材和香料，具有多种功效
+                </p>
+            </div>
+
+            <div class="quality-features">
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>安神静心</h3>
+                    <p>
+                        沉香的香气能够帮助人们平静心绪，缓解压力，改善睡眠质量，是现代人减压的理想选择。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-lungs"></i>
+                    </div>
+                    <h3>理气化痰</h3>
+                    <p>
+                        在传统医学中，沉香被认为具有理气化痰、温中止痛的功效，常用于治疗胃痛、呕吐等症状。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>提神醒脑</h3>
+                    <p>
+                        沉香的香气能够刺激大脑，提高注意力和集中力，帮助人们保持清醒和警觉。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>净化空间</h3>
+                    <p>
+                        沉香燃烧时释放的香气能够净化空气，驱除异味，创造一个清新宜人的环境。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更多产品 -->
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">产品系列</div>
+                <h2 class="section-title">更多沉香系列</h2>
+                <p class="section-description">
+                    探索我们的其他沉香产品，每一款都有其独特的魅力与价值
+                </p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?agarwood" alt="沉香木雕">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">沉香木雕</h3>
+                        <p class="product-year">精品</p>
+                        <p class="product-description">匠人手工雕刻，栩栩如生，既是艺术品，又可熏香</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?incense,stick" alt="沉香线香">
+                        <span class="product-badge">畅销</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">沉香线香</h3>
+                        <p class="product-year">高级</p>
+                        <p class="product-description">采用优质沉香粉，手工制作，香气纯正，燃烧均匀</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/%E6%B2%89%E9%A6%99%E6%B4%97%E5%8F%91%E6%B0%B4-MAhD3Q84lNzDkTsuSq6yWaLeziHdUu.png" alt="沉香洗发水">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">沉香洗发露</h3>
+                        <p class="product-year">日常护理</p>
+                        <p class="product-description">添加沉香精华，滋养头皮，令秀发柔顺亮泽</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="index.html#incense" class="btn btn-outline">返回产品列表</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid simplified">
+            <div class="footer-about">
+                <a href="index.html" class="logo">金润生</a>
+                <p>匠心制作。每一件产品都是时间与智慧的结晶。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="wine-detail.html">名酒系列</a></li>
+                    <li><a href="incense-detail.html">沉香系列</a></li>
+                    <li><a href="tea-detail.html">茶品系列</a></li>
+                    <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                    <li><a href="index.html#soap">皂膏油系列</a></li>
+                    <li><a href="index.html#bracelet">手串系列</a></li>
+                    <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                    <li><a href="#" class="footer-contact-btn">联系我们</a></li>
+                    <li><a href="about-us.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p>地址：广东省博罗县长宁镇澜石村王歇湖小组7号</p>
+                <p>电话：+86 13502457931</p>
+                <p>邮箱：1355419507@qq.com</p>
+                <p>营业时间：周一至周日 10:00-22:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 沉香臻品. 保留所有权利。</p>
+            <p>饮酒过量有害健康，请理性饮酒。未成年人请勿饮酒。</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

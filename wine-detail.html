@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>名酒系列详情 - 沉香臻品</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="./image/logo.png" type="image/x-icon">
+</head>
+<body class="bg-black">
+<!-- 头部导航 -->
+<header class="sticky-header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">沉香臻品</a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="wine-detail.html">名酒系列</a></li>
+                <li><a href="incense-detail.html">沉香系列</a></li>
+                <li><a href="tea-detail.html">茶品系列</a></li>
+                <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+                <li><a href="index.html#bracelet">手串系列</a></li>-->
+                <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                <li><a href="#" id="contact-btn">联系我们</a></li>
+                <li><a href="about-us.html">关于我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="menu-toggle" id="menu-toggle" aria-label="菜单">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- 移动端菜单 -->
+<div id="mobile-menu" class="mobile-menu">
+    <div class="container">
+        <div class="mobile-menu-header">
+            <a href="index.html" class="logo">沉香臻品</a>
+            <button class="close-menu" id="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="wine-detail.html">名酒系列</a></li>
+            <li><a href="incense-detail.html">沉香系列</a></li>
+            <li><a href="tea-detail.html">茶品系列</a></li>
+            <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+            <!--<li><a href="index.html#soap">皂膏油系列</a></li>
+            <li><a href="index.html#bracelet">手串系列</a></li>-->
+            <!-- 联系我们保持显示二维码弹窗逻辑 -->
+            <li><a href="#" class="mobile-contact-btn">联系我们</a></li>
+            <li><a href="about-us.html">关于我们</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 公众号弹窗 -->
+<div id="qrcode-modal" class="fixed-overlay" style="display: none;">
+    <div class="modal">
+        <button class="close-modal" id="close-qrcode">
+            <i class="fas fa-times"></i>
+        </button>
+        <h2>关注我们的公众号</h2>
+        <div class="qrcode-container">
+            <img src="./image/公众号.png" alt="小程序二维码" id="qrcode-image">
+        </div>
+        <p>扫描上方二维码，关注我们的公众号，了解更多产品信息和活动。</p>
+    </div>
+</div>
+
+<main>
+    <!-- 英雄区域 -->
+    <section class="detail-hero wine-hero">
+        <div class="hero-overlay"></div>
+        <div class="container text-center">
+            <h1 class="hero-title">
+                <span class="text-gold">名酒系列</span>
+                <span>传承百年酿造工艺</span>
+            </h1>
+            <p class="hero-description">
+                精选优质原料，遵循传统工艺，每一瓶都是时间与智慧的结晶
+            </p>
+        </div>
+    </section>
+
+    <!-- 产品介绍 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="detail-image">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/b74fa36cfb987aedf90b988018407f1.jpg-JC5MkVM3bqRqkf8cKU9qGDJmTDh07i.jpeg" alt="金润生酒">
+                </div>
+                <div class="detail-content">
+                    <div class="badge">明星产品</div>
+                    <h2>金润生珍藏版</h2>
+                    <p>
+                        金润生珍藏版是我们的旗舰产品，采用传统酿造工艺，精选优质粮食，经过多年陈酿而成。金色龙纹瓶身，象征着尊贵与传承，每一瓶都是匠心之作。
+                    </p>
+                    <p>
+                        这款酒具有醇厚的口感，入口绵柔，回味悠长。香气馥郁，带有淡淡的果香和坚果香，层次丰富，余韵深远。适合在重要场合饮用，也是收藏的上佳之选。
+                    </p>
+                    <p>
+                        每一批次都经过严格的品质控制，确保每一瓶都达到最高标准。限量生产，珍稀难得，是真正的收藏级佳酿。
+                    </p>
+                    <button class="btn btn-primary" id="wine-contact-btn">联系我们了解更多</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 酿造工艺 -->
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">匠心工艺</div>
+                <h2 class="section-title">传统酿造工艺</h2>
+                <p class="section-description">
+                    每一步都凝聚着匠人的智慧与经验，只为酿造出最完美的佳酿
+                </p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>精选原料</h3>
+                        <p>
+                            我们只选用最优质的粮食作为原料，从种植环境到收获时间，每一个环节都严格把控。原料经过多重筛选，确保品质上乘，为酿造优质美酒奠定基础。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>传统发酵</h3>
+                        <p>
+                            采用传统的固态发酵工艺，在恒温恒湿的环境中进行。发酵过程中，我们的酿酒师会定期检查发酵状态，确保发酵过程顺利进行，充分释放原料的风味。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>精心蒸馏</h3>
+                        <p>
+                            蒸馏是酿酒过程中的关键环节。我们使用传统的蒸馏设备，控制温度和时间，提取出最纯净的酒液。蒸馏过程中，我们会去除头尾部分，只保留最精华的中段酒液。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>陈年熟化</h3>
+                        <p>
+                            新酿造的酒液需要经过长时间的陈年熟化才能达到最佳品质。我们的酒液存放在特制的陶坛或橡木桶中，在恒温恒湿的环境中静静陈放，让时间赋予酒液更丰富的层次和更醇厚的口感。
+                        </p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>精心勾调</h3>
+                        <p>
+                            勾调是酿酒艺术的精髓。我们的首席酿酒师拥有数十年的经验，能够精准地将不同年份、不同风味的酒液进行勾调，创造出风味独特、口感平衡的完美佳酿。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品质特点 -->
+    <section class="detail-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">品质保证</div>
+                <h2 class="section-title">卓越品质，非凡体验</h2>
+                <p class="section-description">
+                    我们的酒品具有以下独特特点，带给您无与伦比的品鉴体验
+                </p>
+            </div>
+
+            <div class="quality-features">
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h3>醇厚口感</h3>
+                    <p>
+                        入口绵柔，酒体饱满，层次丰富，回味悠长，带给您极致的口感享受。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>纯净原料</h3>
+                    <p>
+                        精选优质粮食，不添加任何人工添加剂，保证酒品的纯净与健康。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>陈年熟化</h3>
+                    <p>
+                        经过多年陈酿，酒体更加醇厚，香气更加馥郁，风味更加丰富。
+                    </p>
+                </div>
+                <div class="quality-feature">
+                    <div class="quality-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>国际认证</h3>
+                    <p>
+                        通过多项国际品质认证，品质获得全球专业评审的一致认可。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更多产品 -->
+    <section class="detail-section" style="background-color: #111;">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="badge">产品系列</div>
+                <h2 class="section-title">更多名酒系列</h2>
+                <p class="section-description">
+                    探索我们的其他名酒产品，每一款都有其独特的风味与故事
+                </p>
+            </div>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?chinese,wine" alt="陈年佳酿">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">陈年佳酿</h3>
+                        <p class="product-year">2010年</p>
+                        <p class="product-description">十年陈酿，香气馥郁，入口柔和，回味无穷</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?liquor,bottle" alt="传世珍藏">
+                        <span class="product-badge">新品</span>
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">传世珍藏</h3>
+                        <p class="product-year">2018年</p>
+                        <p class="product-description">精选原料，传统工艺，口感醇厚，适合收藏与品鉴</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://source.unsplash.com/random/200x500/?chinese,alcohol" alt="金玉满堂">
+                    </div>
+                    <div class="product-details">
+                        <h3 class="product-title">金玉满堂</h3>
+                        <p class="product-year">2016年</p>
+                        <p class="product-description">甄选上等粮食，古法酿造，馥郁芳香，回味悠长</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="index.html#wine" class="btn btn-outline">返回产品列表</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid simplified">
+            <div class="footer-about">
+                <a href="index.html" class="logo">金润生</a>
+                <p>匠心制作。每一件产品都是时间与智慧的结晶。</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>快速链接</h3>
+                <ul>
+                    <li><a href="wine-detail.html">名酒系列</a></li>
+                    <li><a href="incense-detail.html">沉香系列</a></li>
+                    <li><a href="tea-detail.html">茶品系列</a></li>
+                    <!-- 皂膏油系列和手串系列目前没有独立页面，保持锚点跳转 -->
+                    <li><a href="index.html#soap">皂膏油系列</a></li>
+                    <li><a href="index.html#bracelet">手串系列</a></li>
+                    <!-- 联系我们保持显示二维码弹窗逻辑 -->
+                    <li><a href="#" class="footer-contact-btn">联系我们</a></li>
+                    <li><a href="about-us.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>联系我们</h3>
+                <p>地址：广东省博罗县长宁镇澜石村王歇湖小组7号</p>
+                <p>电话：+86 13502457931</p>
+                <p>邮箱：1355419507@qq.com</p>
+                <p>营业时间：周一至周日 10:00-22:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 沉香臻品. 保留所有权利。</p>
+            <p>饮酒过量有害健康，请理性饮酒。未成年人请勿饮酒。</p>
+        </div>
+    </div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
 
+
     // 渲染评价
     const testimonialsContainer = document.getElementById('testimonials-container');
     if (testimonialsContainer) {
@@ -331,4 +332,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 100);
         }
     }
+});
+
+// 添加页面加载进度指示器
+document.addEventListener('DOMContentLoaded', function() {
+    // 隐藏加载指示器
+    document.getElementById('page-loader').style.display = 'none';
 });

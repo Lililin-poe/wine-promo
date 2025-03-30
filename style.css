@@ -1,18 +1,23 @@
 /* 基础样式 */
 :root {
-    --color-primary: #FFD700; /* 金色 */
-    --color-primary-hover: #DAA520; /* 深金色 */
-    --color-secondary: #90EE90; /* 翠绿色 */
-    --color-secondary-dark: #2E8B57; /* 深绿色 */
-    --color-accent: #8B4513; /* 棕色 */
-    --color-background: #000000;
-    --color-text: #333333;
+    --color-primary: #9D7C4B;    /* 沉香木色 */
+    --color-primary-hover: #6B4423;  /* 深褐色悬停 */
+    --color-secondary: #7F9F7F;  /* 茶绿色 */
+    --color-secondary-dark: #5B7A5B; /* 深茶绿色 */
+    --color-accent: #D4AF37;     /* 金色点缀 */
+    --color-background: #F5EFE6; /* 米白色背景 */
+    --color-text: #4A3F35;
     --color-text-light: #ffffff;
     --color-text-secondary: #CCCCCC;
-    --color-border: rgba(255, 215, 0, 0.3); /* 淡金色边框 */
-    --color-card-bg: rgba(0, 0, 0, 0.8);
+    --color-border: #C4B69D;
+    --color-card-bg: rgba(255, 255, 255, 0.9); /* 卡片背景 */
     --gradient-gold: linear-gradient(135deg, #FFD700, #DAA520);
     --transition: all 0.3s ease;
+    /* 新增分类色 */
+    --color-wine: #8B0000;       /* 酒红色 */
+    --color-tea: #7F9F7F;        /* 茶绿色 */
+    --color-text-contrast: #3E352B;  /* 新增深褐色文本 */
+    --color-text-accent: #7F5A28;
 }
 
 * {
@@ -29,7 +34,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     background-color: var(--color-background);
-    color: var(--color-text-light);
+    color: var(--color-text);
     overflow-x: hidden;
     background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm0 2c-9.941 0-18 8.059-18 18s8.059 18 18 18 18-8.059 18-18-8.059-18-18-18zm0 4c7.732 0 14 6.268 14 14s-6.268 14-14 14-14-6.268-14-14 6.268-14 14-14zm0 2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z' fill='%23FFD700' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
@@ -76,7 +81,7 @@ body {
 }
 
 .btn-primary {
-    background: var(--gradient-gold);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     color: var(--color-text);
     box-shadow: 0 4px 6px rgba(255, 215, 0, 0.1);
 }
@@ -98,7 +103,7 @@ body {
 
 .btn-outline {
     background-color: transparent;
-    color: var(--color-text-light);
+    color: var(--color-text);
     border: 2px solid var(--color-primary);
 }
 
@@ -134,7 +139,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8);
+    background: rgba(245, 239, 230, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--color-border);
 }
@@ -160,7 +165,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--color-text-light);
+    color: var(--color-text);
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
@@ -228,7 +233,7 @@ nav {
 }
 
 .mobile-nav-links a {
-    color: var(--color-text-light);
+    color: var(--color-text) ;
     text-decoration: none;
     font-size: 1.25rem;
     transition: var(--transition);
@@ -350,7 +355,9 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right bottom,
+    rgba(157, 124, 75, 0.8),
+    rgba(107, 68, 35, 0.9));
     z-index: -1;
 }
 
@@ -638,7 +645,7 @@ blockquote {
 }
 
 .product-card {
-    background-color: rgba(0, 0, 0, 0.5);
+    background: var(--color-card-bg);
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     overflow: hidden;
@@ -690,7 +697,7 @@ blockquote {
 .product-title {
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
-    color: var(--color-text-light);
+    color: var(--color-text);
 }
 
 .product-year {
@@ -708,7 +715,7 @@ blockquote {
 /* 产品画廊 */
 .gallery-section {
     padding: 6rem 0;
-    background-color: #111;
+    background-color: var(--color-background);
 }
 
 .gallery-slider {
@@ -935,7 +942,7 @@ blockquote {
 }
 
 .footer h3 {
-    color: var(--color-text-light);
+    color: var(--color-text) ;
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
 }
@@ -1039,7 +1046,21 @@ blockquote {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
-
+@media (max-width: 768px) {
+    /* 新增在现有移动端样式区 */
+    .hero-title {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 增加文字阴影提升可读性 */
+    }
+    .nav-links a {
+        font-weight: 500; /* 加粗导航文字 */
+    }
+}
+@media (max-width: 768px) {
+    /* 新增移动端优化 */
+    .product-card {
+        backdrop-filter: none; /* 关闭毛玻璃效果提升性能 */
+    }
+}
 @media (max-width: 576px) {
     .hero-title {
         font-size: 2rem;
@@ -1326,7 +1347,7 @@ blockquote {
 
 .timeline-content h3 {
     margin-bottom: 0.5rem;
-    color: var(--color-text-light);
+    color: var(--color-text);
 }
 
 .timeline-content p {
@@ -1385,5 +1406,157 @@ blockquote {
     .timeline-item:nth-child(odd) .timeline-dot,
     .timeline-item:nth-child(even) .timeline-dot {
         left: 0.25rem;
+    }
+
+    /* 新增样式 */
+    .specs-box {
+        background: rgba(255,215,0,0.1);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        margin: 1.5rem 0;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .spec-item {
+        text-align: center;
+        padding: 1rem;
+        border: 1px solid var(--color-border);
+        border-radius: 0.75rem;
+    }
+
+    .mission-vision {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .mv-item {
+        background: rgba(0,0,0,0.5);
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .farm-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    /* 产品网格系统 */
+    .product-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 2rem 0;
+    }
+
+    /* 产品卡片 */
+    .product-card {
+        background: #1a1a1a;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* 图片容器 */
+    .product-image {
+        position: relative;
+        aspect-ratio: 3/4;
+        overflow: hidden;
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .product-card:hover img {
+        transform: scale(1.05);
+    }
+
+    /* 产品详细信息 */
+    .product-details {
+        padding: 1.5rem;
+        color: #fff;
+    }
+
+    .product-meta {
+        display: flex;
+        gap: 1rem;
+        margin: 0.5rem 0;
+        color: #aaa;
+    }
+
+    .product-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: #e0e0e0;
+    }
+
+    /* 限量标签 */
+    .product-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: #c2410c;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+    }
+
+    /* 响应式调整 */
+    @media (min-width: 1024px) {
+        .product-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    /* 新增分类色标 */
+    [data-category="wine"] {
+        border-left: 4px solid var(--color-wine);
+        background: linear-gradient(to right, rgba(139,0,0,0.1), transparent);
+    }
+
+    [data-category="tea"] {
+        border-left: 4px solid var(--color-tea);
+        background: linear-gradient(to right, rgba(127,159,127,0.1), transparent);
+    }
+
+    [data-category="incense"] {
+        border-left: 4px solid var(--color-secondary);
+        background: linear-gradient(to right, rgba(107,68,35,0.1), transparent);
+    }
+
+    /* 新增图片边框 */
+    .product-image img {
+        border: 1px solid var(--color-border);
+        border-radius: 4px;
+        padding: 5px;
     }
 }

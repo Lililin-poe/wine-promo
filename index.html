@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./image/logo.png" type="image/x-icon">
+    <!-- 在 head 部分添加 -->
+    <meta name="description" content="沉香臻品 - 匠心独具的艺术，提供高品质名酒、沉香、茶品等传统文化产品">
+    <meta property="og:title" content="沉香臻品 - 匠心独具的艺术">
+    <meta property="og:description" content="源自传统工艺，每一件产品都蕴含着匠人的智慧与自然的馈赠">
+    <meta property="og:image" content="./image/logo.png">
 </head>
 <body class="bg-black">
 <!-- 年龄验证弹窗 -->
@@ -93,15 +98,16 @@
         <div class="hero-overlay"></div>
         <div class="container text-center">
             <h1 class="hero-title">
-                <span class="text-gold">沉香臻品</span>
-                <span>匠心独具的艺术</span>
+                <span class="text-gold">惠州罗浮金润生奇楠中药科技有限公司</span>
+                <span>致力于将优质沉香产品带入人们生活</span>
             </h1>
-            <p class="hero-description">
-                源自传统工艺，每一件产品都蕴含着匠人的智慧与自然的馈赠，带您领略东方文化的精髓
-            </p>
+            <!--<p class="hero-description">
+                致力于将优质沉香产品带入人们生活
+            </p>-->
             <div class="button-group">
                 <button class="btn btn-primary" id="hero-contact-btn">联系我们</button>
-                <button class="btn btn-outline">了解更多</button>
+                <!-- 修改了解更多按钮，添加href属性指向about-us.html -->
+                <a href="about-us.html" class="btn btn-outline">了解更多</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -112,14 +118,14 @@
         </div>
     </section>
 
-    <!-- 产品特性 -->
+    <!--&lt;!&ndash; 产品特性 &ndash;&gt;
     <section class="features-section" id="features">
         <div class="container">
             <div class="section-header text-center">
                 <div class="badge">品质保证</div>
                 <h2 class="section-title">臻品特性，匠心工艺</h2>
                 <p class="section-description">
-                    每一件产品都经过严格筛选和精心制作，传承千年工艺，融合现代科技
+                    每一件产品都经过严格筛选和精心制作，传承千年工艺，融入现代科技
                 </p>
             </div>
             <div class="features-grid">
@@ -153,9 +159,9 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
-    <!-- 品牌故事 -->
+   <!-- &lt;!&ndash; 品牌故事 &ndash;&gt;
     <section class="story-section" id="story">
         <div class="container">
             <div class="story-grid">
@@ -178,7 +184,7 @@
                 <div class="story-image">
                     <div class="image-overlay"></div>
                     <blockquote>
-                        "真正的匠人精神在于对传统的尊重与创新的勇气，就像我们制作的每一件产品。"
+                        "真正的匠人精神在于对传统的respect与创新的勇气，就像我们制作的每一件产品。"
                         <div class="quote-author">
                             <div class="quote-line"></div>
                             <span>创始人</span>
@@ -187,7 +193,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 
     <!-- 产品分类导航 -->
     <section class="category-nav-section">
@@ -196,7 +202,7 @@
                 <button class="category-tab active" data-category="wine">名酒系列</button>
                 <button class="category-tab" data-category="incense">沉香系列</button>
                 <button class="category-tab" data-category="tea">茶品系列</button>
-                <button class="category-tab" data-category="soap">皂膏油系列</button>
+                <button class="category-tab" data-category="soap">奇楠沉香日化</button>
                 <button class="category-tab" data-category="bracelet">手串系列</button>
             </div>
         </div>
@@ -214,13 +220,13 @@
                 <div class="product-grid">
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="./image/500ml酒.png" alt="金润生酒">
-                            <span class="product-badge">限量版</span>
+                            <img src="./image/500酒1.jpg" alt="金润生酒">
+                            <span class="product-badge">金润生酱酒</span>
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">金润生珍藏版</h3>
-                            <p class="product-year">2015年</p>
-                            <p class="product-description">金色龙纹瓶身，酒体醇厚，口感绵长，余韵悠长</p>
+                            <!--<h3 class="product-title">规格：500ml*1瓶/盒</h3>
+                            <p class="product-year"> 市场零售价：898元/人民币</p>-->
+                            <!--<p class="product-description">金色龙纹瓶身，酒体醇厚，口感绵长，余韵悠长</p>-->
                             <!-- 修改了解更多按钮，添加 data-target 属性 -->
                             <button class="btn btn-outline btn-sm" data-target="wine-detail.html">了解更多</button>
                         </div>
@@ -228,33 +234,35 @@
                     <!-- 其他产品卡片保持不变 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="./image/375酒1.jpg" alt="陈年佳酿">
+                            <img src="./image/375ml酒4.jpg">
+                            <span class="product-badge">375ml</span>
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">陈年佳酿</h3>
-                            <p class="product-year">2010年</p>
-                            <p class="product-description">十年陈酿，香气馥郁，入口柔和，回味无穷</p>
+                            <h3 class="product-title">规格： 375ml*2瓶/盒 </h3>
+                            <p class="product-year">市场零售价：1280元/人民币  </p>
+                            <!--<p class="product-description">十年陈酿，香气馥郁，入口柔和，回味无穷</p>-->
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="./image/375ml酒4.jpg" alt="传世珍藏">
-                            <span class="product-badge">新品</span>
+                            <img src="./image/75ml酒1.png" alt="传世珍藏">
+                            <span class="product-badge">75ml</span>
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">传世珍藏</h3>
-                            <p class="product-year">2018年</p>
-                            <p class="product-description">精选原料，传统工艺，口感醇厚，适合收藏与品鉴</p>
+                            <h3 class="product-title">规格：75ml*6瓶/盒</h3>
+                            <p class="product-year">市场零售价：1680元/人民币</p>
+                            <!--<p class="product-description">精选原料，传统工艺，口感醇厚，适合收藏与品鉴</p>-->
                         </div>
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="./image/375酒3.jpg" alt="金玉满堂">
+                            <img src="./image/500ml酒4.jpg" >
+                            <span class="product-badge">500ml</span>
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">金玉满堂</h3>
-                            <p class="product-year">2016年</p>
-                            <p class="product-description">甄选上等粮食，古法酿造，馥郁芳香，回味悠长</p>
+                            <h3 class="product-title">规格：500ml*1瓶/盒</h3>
+                            <p class="product-year">市场零售价：898元/人民币</p>
+                            <!--<p class="product-description">甄选上等粮食，古法酿造，馥郁芳香，回味悠长</p>-->
                         </div>
                     </div>
                 </div>
@@ -336,9 +344,9 @@
                             <span class="product-badge">珍藏</span>
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">陈年普洱</h3>
-                            <p class="product-year">2005年</p>
-                            <p class="product-description">云南大叶种，自然发酵，香气醇厚，回甘持久</p>
+                            <h3 class="product-title">奇楠沉香茶-吉祥礼盒装</h3>
+                            <p class="product-year">规格：160g（5g*16袋*2盒）</p>
+                            <p class="product-description">统一零售价：320元</p>
                             <!-- 修改了解更多按钮，添加 data-target 属性 -->
                             <button class="btn btn-outline btn-sm" data-target="tea-detail.html">了解更多</button>
                         </div>
@@ -349,12 +357,12 @@
                             <img src="./image/如意1.png" alt="西湖龙井">
                         </div>
                         <div class="product-details">
-                            <h3 class="product-title">西湖龙井</h3>
-                            <p class="product-year">明前</p>
-                            <p class="product-description">产自西湖核心产区，色翠香郁，滋味鲜爽</p>
+                            <h3 class="product-title">奇楠沉香茶-如意礼盒装</h3>
+                            <p class="product-year">规格：100g（5g*20袋）</p>
+                            <p class="product-description">统一零售价：280元</p>
                         </div>
                     </div>
-                    <div class="product-card">
+                    <!--<div class="product-card">
                         <div class="product-image">
                             <img src="./image/龙凤1.png" alt="武夷岩茶">
                             <span class="product-badge">限量</span>
@@ -374,7 +382,7 @@
                             <p class="product-year">2018年</p>
                             <p class="product-description">采用福鼎大白茶菜种，自然萎凋，清香淡雅</p>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="text-center mt-4">
                     <!-- 查看更多茶品详情已正确跳转，无需修改 -->

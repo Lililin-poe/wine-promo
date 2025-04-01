@@ -6,7 +6,7 @@
     --color-secondary-dark: #5B7A5B; /* 深茶绿色 */
     --color-accent: #D4AF37;     /* 金色点缀 */
     --color-background: #F5EFE6; /* 米白色背景 */
-    --color-text: #4A3F35;
+    --color-text: #3E352B;
     --color-text-light: #ffffff;
     --color-text-secondary: #CCCCCC;
     --color-border: #C4B69D;
@@ -18,6 +18,7 @@
     --color-tea: #7F9F7F;        /* 茶绿色 */
     --color-text-contrast: #3E352B;  /* 新增深褐色文本 */
     --color-text-accent: #7F5A28;
+    --color-text-dark: #2D2721;
 }
 
 * {
@@ -46,6 +47,16 @@ body {
     padding: 0 1rem;
 }
 
+.emphasis-text {
+    color: var(--color-text-dark);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+.text-protection {
+    text-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.3),
+            -1px -1px 2px rgba(255, 255, 255, 0.1);
+}
 /* 工具类 */
 .text-center {
     text-align: center;
@@ -169,6 +180,9 @@ nav {
     text-decoration: none;
     font-size: 0.9rem;
     transition: var(--transition);
+    color: var(--color-text);
+    font-weight: 500;  /* 新增 */
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);  /* 新增 */
 }
 
 .nav-links a:hover {
@@ -287,7 +301,7 @@ nav {
 
 .modal h2 {
     margin-bottom: 1rem;
-    color: var(--color-text-light);
+    color: var(--color-text);
 }
 
 .modal p {
@@ -356,8 +370,8 @@ nav {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right bottom,
-    rgba(157, 124, 75, 0.8),
-    rgba(107, 68, 35, 0.9));
+    rgba(0, 0, 0, 0.3),  /* 新增遮罩层 */
+    rgba(107, 68, 35, 0.7));
     z-index: -1;
 }
 
@@ -366,6 +380,8 @@ nav {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: var(--color-text-accent);  /* 使用新增的琥珀色 */
+
 }
 
 .hero-title span {
@@ -606,7 +622,7 @@ blockquote {
     background-color: transparent;
     border: 1px solid var(--color-border);
     border-radius: 2rem;
-    color: var(--color-text-light);
+    color: var(--color-text);
     cursor: pointer;
     transition: var(--transition);
     font-size: 0.9rem;
@@ -991,9 +1007,8 @@ blockquote {
 }
 
 .footer-links a:hover {
-    color: var(--color-primary);
+    color: var(--color-primary-hover);  /* 原为 --color-primary */
 }
-
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
@@ -1049,7 +1064,7 @@ blockquote {
 @media (max-width: 768px) {
     /* 新增在现有移动端样式区 */
     .hero-title {
-        text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 增加文字阴影提升可读性 */
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 增强阴影 */
     }
     .nav-links a {
         font-weight: 500; /* 加粗导航文字 */
